@@ -2,11 +2,13 @@ package org.example;
 
 public class Hotels {
     String hotelName;
-    int WeekDayRegCustomer;
+    int WeekDayRegCust;
+    int WeekendRegCust;
 
-    public Hotels(String hotelName, int WeekDayRegCustomer) {
+    public Hotels(String hotelName, int WeekDayRegCust, int WeekendRegCust) {
         this.hotelName = hotelName;
-        this.WeekDayRegCustomer = WeekDayRegCustomer;
+        this.WeekDayRegCust = WeekDayRegCust;
+        this.WeekendRegCust = WeekendRegCust;
     }
 
     public String getHotelName() {
@@ -17,25 +19,34 @@ public class Hotels {
         this.hotelName = hotelName;
     }
 
-    public int getWeekDayRegCustomer() {
-        return WeekDayRegCustomer;
+    public int getWeekDayRegCust() {
+        return WeekDayRegCust;
     }
 
-    public void setWeekDayRegCustomer(int weekDayRegCustomer) {
-        this.WeekDayRegCustomer = weekDayRegCustomer;
+    public void setWeekDayRegCust(int weekDayRegCust) {
+        this.WeekDayRegCust = weekDayRegCust;
+    }
+
+    public int getWeekendRegCust() {
+        return WeekendRegCust;
+    }
+
+    public void setWeekendRegCust(int weekendRegCust) {
+        this.WeekendRegCust = weekendRegCust;
     }
 
     @Override
     public String toString() {
         return "Hotel{" +
                 "hotelName='" + hotelName + '\'' +
-                ", hotelWeekDayRegularCustomer=" + WeekDayRegCustomer +
+                ", hotelWeekDayRegularCustomer=" + WeekDayRegCust +
+                ", hotelWeekendRegularCustomer=" + WeekendRegCust +
                 '}';
     }
 
     public int rateCalculation(String day) {
         if (day.equals("MONDAY") || day.equals("TUESDAY") || day.equals("WEDNESDAY") || day.equals("THURSDAY") || day.equals("FRIDAY")) {
-            return WeekDayRegCustomer;
+            return WeekDayRegCust;
         } else {
             return 0;
         }
