@@ -4,11 +4,13 @@ public class Hotels {
     String hotelName;
     int WeekDayRegCust;
     int WeekendRegCust;
+    int rating;
 
-    public Hotels(String hotelName, int WeekDayRegCust, int WeekendRegCust) {
+    public Hotels(String hotelName, int WeekDayRegCust, int WeekendRegCust, int rating) {
         this.hotelName = hotelName;
         this.WeekDayRegCust = WeekDayRegCust;
         this.WeekendRegCust = WeekendRegCust;
+        this.rating = rating;
     }
 
     public String getHotelName() {
@@ -35,20 +37,29 @@ public class Hotels {
         this.WeekendRegCust = weekendRegCust;
     }
 
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
+
     @Override
     public String toString() {
         return "Hotel{" +
                 "hotelName='" + hotelName + '\'' +
                 ", hotelWeekDayRegularCustomer=" + WeekDayRegCust +
                 ", hotelWeekendRegularCustomer=" + WeekendRegCust +
+                ", rating=" + rating +
                 '}';
     }
 
     public int rateCalculation(String day) {
         if (day.equals("MONDAY") || day.equals("TUESDAY") || day.equals("WEDNESDAY") || day.equals("THURSDAY") || day.equals("FRIDAY")) {
-            return WeekDayRegCust;
+            return getWeekDayRegCust();
         } else {
-            return WeekendRegCust;
+            return getWeekendRegCust();
         }
     }
 }
