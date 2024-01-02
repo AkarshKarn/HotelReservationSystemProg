@@ -48,7 +48,7 @@ public class Hotels {
         if (day.equals("MONDAY") || day.equals("TUESDAY") || day.equals("WEDNESDAY") || day.equals("THURSDAY") || day.equals("FRIDAY")) {
             return WeekDayRegCust;
         } else {
-            return 0;
+            return WeekendRegCust;
         }
     }
 }
