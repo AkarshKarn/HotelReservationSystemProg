@@ -32,4 +32,12 @@ public class Hotels {
                 ", hotelWeekDayRegularCustomer=" + WeekDayRegCustomer +
                 '}';
     }
+
+    public int rateCalculation(String day) {
+        if (day.equals("MONDAY") || day.equals("TUESDAY") || day.equals("WEDNESDAY") || day.equals("THURSDAY") || day.equals("FRIDAY")) {
+            return WeekDayRegCustomer;
+        } else {
+            return 0;
+        }
+    }
 }
