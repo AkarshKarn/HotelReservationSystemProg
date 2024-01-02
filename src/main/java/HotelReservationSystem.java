@@ -25,6 +25,7 @@ public class HotelReservationSystem {
         System.out.println(list);
         findCheapestHotel();
         cheapestBestRatedHotel();
+        bestRatedHotel();
 
     }
 
@@ -67,5 +68,19 @@ public class HotelReservationSystem {
         }
         int bestRating=rating;
         list.stream().filter(i->i.getRating()==bestRating).forEach(System.out::println);
+    }
+
+    public static void bestRatedHotel() {
+        int rating1 = list.get(0).getRating();
+        int rating2 = list.get(1).getRating();
+        int rating3 = list.get(2).getRating();
+        if (rating1 > rating2 && rating1 > rating3) {
+            System.out.println("Best Rated Hotel is " + rating1);
+        } else if (rating2 > rating1 && rating2 > rating3) {
+            System.out.println("Best Rated Hotel is " + rating2);
+        } else {
+            System.out.println("Best Rated Hotel is " + rating3);
+
+        }
     }
 }
