@@ -14,9 +14,9 @@ public class HotelReservationSystem {
 
             HotelReservationSystem hotelReservationSystem = new HotelReservationSystem();
 
-        Hotels hotel1 = new Hotels("Lakewood", 110,90);
-        Hotels hotel2 = new Hotels("Bridgewood", 160,80);
-        Hotels hotel3 = new Hotels("Ridgewood", 220,150);
+        Hotels hotel1 = new Hotels("Lakewood", 130,80,2);
+        Hotels hotel2 = new Hotels("Bridgewood", 170,90,5);
+        Hotels hotel3 = new Hotels("Ridgewood", 240,130,4);
 
         //   Adding the Hotels to Hotel Reservation Class
         list.add(hotel1);
@@ -24,6 +24,7 @@ public class HotelReservationSystem {
         list.add(hotel3);
         System.out.println(list);
         findCheapestHotel();
+        cheapestBestRatedHotel();
 
     }
 
@@ -55,5 +56,16 @@ public class HotelReservationSystem {
             System.out.println("Cheapest Rates For The Hotel :- " + sum3 + "$");
 
         }
+    }
+
+    public static void cheapestBestRatedHotel(){
+        int rating=Integer.MAX_VALUE;
+        for (Hotels hotel:list){
+            if (hotel.getRating()<rating){
+                rating=hotel.getRating();
+            }
+        }
+        int bestRating=rating;
+        list.stream().filter(i->i.getRating()==bestRating).forEach(System.out::println);
     }
 }
